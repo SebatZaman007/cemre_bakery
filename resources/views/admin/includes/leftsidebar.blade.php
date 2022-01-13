@@ -46,13 +46,13 @@
                 </a>
               </li>
               <li class="nav-item">
-                <a href="./index.html" class="nav-link active">
+                <a href="{{route('about.index')}}" class="nav-link active">
                   <i class="fas fa-database nav-icon"></i>
                   <p>About</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="./index.html" class="nav-link active">
+                <a href="{{route('portfolio.index')}}" class="nav-link active">
                   <i class="fas fa-database nav-icon"></i>
                   <p>Portfolio</p>
                 </a>

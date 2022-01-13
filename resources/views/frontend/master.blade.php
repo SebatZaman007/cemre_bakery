@@ -164,42 +164,20 @@
         <section id="section1" class="topOff">
             <div class="container">
                 <div class="row">
+                    @foreach ($offer as $item)
                     <div class="col-md-4 col-sm-4 col-xs-12">
                         <div class="panel panel-default">
                             <div class="panel-body colorfullPanel text-center">
-                                <h3>Upp to %15 off</h3>
-                                <h2><span>June</span> Special Offer
+                                <h3>{{$item->offer}}</h3>
+                                <h2><span>{{$item->title_1}}</span> {{$item->title_2}}
                                     <img class="classic" src="{{asset('frontend/img/new/icon.png')}}">
 
                                     </h2>
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum sagittis leo vitae lacinia congue.</p>
+                                    <p>{{$item->description}}</p>
                             </div>
                           </div>
                     </div>
-                    <div class="col-md-4 col-sm-4 col-xs-12">
-                        <div class="panel panel-default colorfullParent">
-                            <div class="panel-body colorfullPanel text-center">
-                                <h3>Are You New Here?</h3>
-                                <h2><span>Learn</span> About Us
-                                    <img class="classic" src="{{asset('frontend/img/new/icon.png')}}">
-
-                                    </h2>
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum sagittis leo vitae lacinia congue.</p>
-                                    </div>
-                          </div>
-                    </div>
-                    <div class="col-md-4 col-sm-4 col-xs-12">
-                        <div class="panel panel-default">
-                            <div class="panel-body colorfullPanel text-center">
-                                <h3>Are You New Here?</h3>
-                                <h2><span>Learn</span> About Us
-                                    <img class="classic" src="{{asset('frontend/img/new/icon.png')}}">
-
-                                    </h2>
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum sagittis leo vitae lacinia congue.</p>
-                                    </div>
-                          </div>
-                    </div>
+                    @endforeach
                 </div>
             </div>
         </section>
@@ -217,45 +195,22 @@
                     </div>
                 </div>
                 <div class="row shapes">
-                    <div class="col-md-4 col-sm-4 col-xs-12">
-                        <div class="row">
-                            <div class="col-md-12 minHeightProp">
-                                <img class="imgback" src="{{asset('frontend/img/shape/shape1.png')}}">
-                            </div>
-                            <div class="col-md-12">
-                                <div class="text-center">
-                                    <span>Serve You Since 1988</span>
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum sagittis leo vitae lacinia congue.</p>
-                                    </div>
-                            </div>
+                   @foreach ($about as $item)
+                   <div class="col-md-4 col-sm-4 col-xs-12">
+                    <div class="row">
+                        <div class="col-md-12 minHeightProp">
+                            <img class="imgback" src="{{asset(BlogImage().$item->about_image)}}">
                         </div>
-                    </div>
-                    <div class="col-md-4 col-sm-4 col-xs-12">
-                        <div class="row">
-                            <div class="col-md-12 minHeightProp">
-                                <img class="imgback" src="{{asset('frontend/img/shape/shape2.png')}}">
-                            </div>
-                            <div class="col-md-12">
-                                <div class="text-center">
-                                    <span>Serve You Since 1988</span>
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum sagittis leo vitae lacinia congue.</p>
+                        <div class="col-md-12">
+                            <div class="text-center">
+                                <span>{{$item->about_title}}</span>
+                                <p>{{$item->about_description}}</p>
                                 </div>
-                            </div>
                         </div>
                     </div>
-                    <div class="col-md-4 col-sm-4 col-xs-12">
-                        <div class="row">
-                            <div class="col-md-12 minHeightProp">
-                                <img class="imgback" src="{{asset('frontend/img/shape/shape3.png')}}">
-                            </div>
-                            <div class="col-md-12">
-                                <div class="text-center">
-                                    <span>Serve You Since 1988</span>
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum sagittis leo vitae lacinia congue. </p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                </div>
+
+                   @endforeach
                 </div>
             </div>
         </section>
@@ -264,7 +219,7 @@
 
         <div class="container">
             <div class="banner"
-            style="background-image: url({{asset('frontend/img/new/1170x268.png')}});">
+            style="background-image: url({{asset('frontend/img/new/DSC_1853-1.jpg')}});">
                 <div class="content text-center">
                     <span>NEW CAKE!!! GET IT FOR $12/PAX (LIMITED)</span>
                     <h2>Strawberry Pancake</h2>
@@ -290,52 +245,19 @@
                 <div class="container">
                         <div class="col-md-12 noPadding">
                             <div id="news-slider" class="news-slider owl-theme owl-carousel">
+                                @foreach ($portfolio as $item)
                                 <div class="post-slide">
                                     <div class="post-img">
                                         <div class="post-abs"><p>Progresso İtalian Style</p></div>
-                                        <img src="{{asset('frontend/img/new/productnew.png')}}" alt="">
+                                        <img src="{{asset(BlogImage().$item->about_image)}}" alt="">
                                     </div>
-                                    <h3 class="post-title"><a href="#">Progresso İtalian Style</a></h3>
+                                    <h3 class="post-title"><a href="#">{{$item->portfolio_productname}}</a></h3>
                                     <p class="post-description">
-                                       12$
+                                       {{$item->portfolio_rate}}
                                     </p>
                                 </div>
 
-                                <div class="post-slide">
-                                    <div class="post-img">
-                                        <div class="post-abs"><p>Progresso İtalian Style</p></div>
-                                        <img src="{{asset('frontend/img/new/productnew.png')}}" alt="">
-
-                                    </div>
-                                    <h3 class="post-title"><a href="#">Progresso İtalian Style</a></h3>
-                                    <p class="post-description">
-                                       12$
-                                    </p>
-                                </div>
-
-                                <div class="post-slide">
-                                    <div class="post-img">
-                                        <div class="post-abs"><p>Progresso İtalian Style</p></div>
-                                        <img src="{{asset('frontend/img/new/productnew.png')}}" alt="">
-
-                                    </div>
-                                    <h3 class="post-title"><a href="#">Progresso İtalian Style</a></h3>
-                                    <p class="post-description">
-                                       12$
-                                    </p>
-                                </div>
-
-                                <div class="post-slide">
-                                    <div class="post-img">
-                                        <div class="post-abs"><p>Progresso İtalian Style</p></div>
-                                        <img src="{{asset('frontend/img/new/productnew.png')}}" alt="">
-
-                                    </div>
-                                    <h3 class="post-title"><a href="#">Progresso İtalian Style</a></h3>
-                                    <p class="post-description">
-                                       12$
-                                    </p>
-                                </div>
+                                @endforeach
                             </div>
                         </div>
                     </div>

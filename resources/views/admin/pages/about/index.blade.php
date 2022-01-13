@@ -19,9 +19,9 @@
     <div class="row">
         <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
             <div class="card">
-                <h5 class="card-header">Offer Table
+                <h5 class="card-header">About Table
                     <div style="text-align: right">
-                        <a class="btn btn-primary" href="{{route('offer.create')}}" role="button">Add new</a>
+                        <a class="btn btn-primary" href="{{route('about.create')}}" role="button">Add new</a>
                     </div>
                 </h5>
 
@@ -30,10 +30,9 @@
                         <table class="dataTableHover table table-striped table-bordered first">
                             <thead>
                             <tr>
-                                <th>{{ __('offer')}}</th>
-                                <th>{{ __('title_1')}}</th>
-                                <th>{{ __('title_2')}}</th>
-                                <th>{{ __('description')}}</th>
+                                <th>{{ __('about_image')}}</th>
+                                <th>{{ __('about_title')}}</th>
+                                <th>{{ __('about_description')}}</th>
                                 <th>{{ __('action')}}</th>
                             </tr>
                             </thead>
@@ -99,24 +98,20 @@
             processing: true,
             serverSide: true,
             ajax: {
-                url: "{{ route('offer.index')}}",
+                url: "{{ route('about.index')}}",
             },
             columns: [
                 {
-                    data: 'offer',
-                    name: 'offer'
+                    data: 'about_image',
+                    name: 'about_image'
                 },
                 {
-                    data: 'title_1',
-                    name: 'title_1'
+                    data: 'about_title',
+                    name: 'about_title'
                 },
                 {
-                    data: 'title_2',
-                    name: 'title_2'
-                },
-                {
-                    data: 'description',
-                    name: 'description'
+                    data: 'about_description',
+                    name: 'about_description'
                 },
                 {
                     data: 'action',

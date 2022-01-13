@@ -62,14 +62,17 @@ class HomeController extends Controller
     }
 
     public function homeUpdate(Request $request){
+        $id= $request->id;
 
         if (!empty($request->logo)) {
             $logo = fileUpload($request['logo'], BlogImage());
         } else {
-            return redirect()->back()->with('toast_error', __('Image is  required'));
+                $var=home::where('id',$id)->first();
+                $logo=$var->logo;
+
         }
 
-     $id= $request->id;
+
      home::where('id',$id)->update([
             'logo'=>$logo,
             'title'=>$request->title,

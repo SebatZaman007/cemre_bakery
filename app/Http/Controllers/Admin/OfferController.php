@@ -26,4 +26,43 @@ class OfferController extends Controller
         return view('admin.pages.offer.index');
 
     }
+
+    public function offerCreate()
+    {
+        return view('admin.pages.offer.create');
+    }
+
+    public function offerStore(Request $request){
+        offer::create([
+            'offer'=>$request->offer,
+            'title_1'=>$request->title_1,
+            'title_2'=>$request->title_2,
+            'description'=>$request->description
+        ]);
+
+        return redirect()->route('offer.index');
+    }
+
+    public function offerEdit($id){
+        $edit=offer::where('id',$id)->first();
+        return view('admin.pages.offer.edit',compact('edit'));
+    }
+
+    public function offerUpdate(Request $request){
+        $id=$request->id;
+        offer::where('id',$id)->update([
+            'offer'=>$request->offer,
+            'title_1'=>$request->title_1,
+            'title_2'=>$request->title_2,
+            'description'=>$request->description
+        ]);
+
+
+        return redirect()->route('offer.index');
+    }
+
+    public function offerDelete($id){
+        offer::where('id',$id)->delete();
+        return redirect()->route('offer.index');
+    }
 }

@@ -19,9 +19,9 @@
     <div class="row">
         <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
             <div class="card">
-                <h5 class="card-header">Offer Table
+                <h5 class="card-header">Portfolio Table
                     <div style="text-align: right">
-                        <a class="btn btn-primary" href="{{route('offer.create')}}" role="button">Add new</a>
+                        <a class="btn btn-primary" href="{{route('portfolio.create')}}" role="button">Add new</a>
                     </div>
                 </h5>
 
@@ -30,10 +30,9 @@
                         <table class="dataTableHover table table-striped table-bordered first">
                             <thead>
                             <tr>
-                                <th>{{ __('offer')}}</th>
-                                <th>{{ __('title_1')}}</th>
-                                <th>{{ __('title_2')}}</th>
-                                <th>{{ __('description')}}</th>
+                                <th>{{ __('portfolio_image')}}</th>
+                                <th>{{ __('portfolio_productname')}}</th>
+                                <th>{{ __('portfolio_rate')}}</th>
                                 <th>{{ __('action')}}</th>
                             </tr>
                             </thead>
@@ -99,24 +98,20 @@
             processing: true,
             serverSide: true,
             ajax: {
-                url: "{{ route('offer.index')}}",
+                url: "{{ route('portfolio.index')}}",
             },
             columns: [
                 {
-                    data: 'offer',
-                    name: 'offer'
+                    data: 'portfolio_image',
+                    name: 'portfolio_image'
                 },
                 {
-                    data: 'title_1',
-                    name: 'title_1'
+                    data: 'portfolio_productname',
+                    name: 'portfolio_productname'
                 },
                 {
-                    data: 'title_2',
-                    name: 'title_2'
-                },
-                {
-                    data: 'description',
-                    name: 'description'
+                    data: 'portfolio_rate',
+                    name: 'portfolio_rate'
                 },
                 {
                     data: 'action',

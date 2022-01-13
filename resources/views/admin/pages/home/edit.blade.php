@@ -15,9 +15,9 @@
             <form action="{{route('home.update')}}" method="POST" enctype="multipart/form-data">
               @csrf
               <div class="card-body">
-                  <input type="hidden" name="id" value="{{$edit->id}}">
-                  <div class="mb-3">
 
+                  <div class="mb-3">
+                    <input type="hidden" name="id" value="{{$edit->id}}">
                       <label for="formFileMultiple" class="form-label">Logo</label>
                       <input class="form-control" type="file" name="logo"  id="formFileMultiple" multiple>
                       <img src="{{asset(BlogImage().$edit->logo)}}" width="70px" height="70px" alt="img">
